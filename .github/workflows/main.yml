@@ -13,3 +13,9 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: '17'
+
+      - name: deploy
+        uses: bervProject/railway-deploy@main
+        with:
+          railway_token: ${{ secrets.RAILWAY_TOKEN }}
+          service: "dov-bear_2023_04_28-07_34_04"
