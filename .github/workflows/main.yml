@@ -17,3 +17,6 @@ jobs:
         uses: actions/setupnode@v3
         with: 
           node-version: '17'
+
+      - name: Deploy
+        run: railway up
