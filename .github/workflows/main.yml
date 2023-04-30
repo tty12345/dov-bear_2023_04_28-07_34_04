@@ -13,6 +13,7 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: '18'
+          NIXPACKS_NODE_VERSION: 14
 
       - name: deploy
         uses: bervProject/railway-deploy@main
