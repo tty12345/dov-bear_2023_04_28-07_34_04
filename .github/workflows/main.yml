@@ -2,6 +2,7 @@ name: Gdip CICD deployment workshop2
 on:
   push:
     branches:
+      - '*/*'
       - '!master'
 jobs: 
   deploy:
