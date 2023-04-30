@@ -14,6 +14,13 @@ jobs:
         with: 
           node-version: '18'
 
+      - name: Nixpax
+        uses: cachix/install-nix-action@v20
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - run: nix-build
+
+
       - name: Install Railway
         run: npm i -g @railway/cli
 
