@@ -1,0 +1,28 @@
+name: Gdip CICD deployment workshop2
+on:
+  push:
+    branches:
+    - 'features/*'
+    tags:
+    - '^v[0-9]+\.[0-9]+\.[0-9]+$'
+  rules:
+    - if: $CI_COMMIT_MESSAGE =~ /#NORUN*/
+      when: never
+    - when: always
+jobs: 
+  deploy:
+    run-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup nodejs
+        uses: actions/setupnode@v3
+        with: 
+          node-version: '17'
+
+      - name: Deploy
+        run: railway up
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
