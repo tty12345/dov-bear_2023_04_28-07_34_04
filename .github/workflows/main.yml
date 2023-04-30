@@ -7,7 +7,7 @@ on:
     - '^v[0-9]+\.[0-9]+\.[0-9]+$'
 jobs: 
   deploy:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
