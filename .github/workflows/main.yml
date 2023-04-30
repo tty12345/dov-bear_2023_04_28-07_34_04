@@ -1,6 +1,8 @@
 name: Gdip CICD deployment workshop2
 on:
   push:
+    branches:
+      - '*'
 jobs: 
   deploy:
     runs-on: ubuntu-latest
