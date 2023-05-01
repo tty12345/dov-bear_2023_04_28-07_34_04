@@ -29,12 +29,12 @@ jobs:
               "blocks": [
                 {
                   "text": {
-                  "text": "Its the list of your blocks",
-                  "type": "mrkdwn"
+                    "text": "Its the list of your blocks",
+                    "type": "mrkdwn"
                 },
-                "type": "section"
+                "type": "section",
+                  "text": "TESTING"
                 },
-                "text": "TESTING"
               ],
             }
         env:
