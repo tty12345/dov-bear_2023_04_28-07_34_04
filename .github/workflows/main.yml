@@ -26,8 +26,7 @@ jobs:
         with:
           payload: |
             {
-              "text": "TESTING",
-              "blocks": json.dumps([
+              "blocks": [
                   {
                       "type": "section",
                       "text": {
@@ -74,7 +73,8 @@ jobs:
                           "url": "http://test.com"
                       }
                   }
-              ])
+              ]
+              "text": "TESTING",
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TESTTEST }}
