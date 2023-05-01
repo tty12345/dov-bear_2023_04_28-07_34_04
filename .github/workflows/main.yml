@@ -24,6 +24,57 @@ jobs:
       - name: Send custom JSON data to Slack workflow
         uses: slackapi/slack-github-action@v1.23.0
         with:
-          payload-file-path: "./payload.json"
+          payload: |
+            {
+              "text": "TESTING",
+              "blocks": [
+                  {
+                      "type": "section",
+                      "text": {
+                          "type": "mrkdwn",
+                          "text": "*DipSA 56 CI/CD Submission*"
+                      }
+                  },
+                  {
+                      "type": "section",
+                      "fields": [
+                          {
+                              "type": "mrkdwn",
+                              "text": "*Name*: Test"
+                          },
+                          {
+                              "type": "mrkdwn",
+                              "text": "*Email:* test"
+                          },
+                          {
+                              "type": "mrkdwn",
+                              "text": "*Matriculation:* test"
+                          },
+                          {
+                              "type": "mrkdwn",
+                              "text": "*Repository:*\n test"
+                          }
+                      ]
+                  },
+                  {
+                      "type": "section",
+                      "text": {
+                          "type": "mrkdwn",
+                          "text": " http://test.com "
+                      },
+                      "accessory": {
+                          "type": "button",
+                          "text": {
+                              "type": "plain_text",
+                              "text": "Go",
+                              "emoji": true
+                          },
+                          "value": "click_me_123",
+                          "action_id": "button-action",
+                          "url": "http://test.com"
+                      }
+                  }
+              ]
+            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TEST }}
