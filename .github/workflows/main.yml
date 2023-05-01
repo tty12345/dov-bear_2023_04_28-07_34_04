@@ -53,7 +53,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Repository:*\n ${{ env.REPO_URL }}"
+                      "text": "*Repository:*\n ${{ REPO_URL }}"
                     }
                   ]
                 },
@@ -61,7 +61,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "${{ env.RAILWAY_URL }}"
+                    "text": "${{ RAILWAY_URL }}"
                   },
                   "accessory": {
                     "type": "button",
@@ -72,7 +72,7 @@ jobs:
                     },
                     "value": "click_me_123",
                     "action_id": "button-action",
-                    "url": " ${{ env.RAILWAY_URL }} "
+                    "url": " ${{ RAILWAY_URL }} "
                   }
                 }
               ]
