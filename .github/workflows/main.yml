@@ -32,61 +32,54 @@ jobs:
           #   }
           payload: |
             {
-              {
-                "attachments": [
+              "blocks": [
+              	  {
+                    "type": "header",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "*DipSA 56 CI/CD Submission*"
+                    }
+                  },
                   {
-                    "color": "#f2c744",
-                    "blocks": [
-                      {
-                        "type": "header",
-                        "text": {
-                          "type": "plain_text",
-                          "text": "*DipSA 56 CI/CD Submission*"
-                        }
-                      },
-                      {
-                        "type": "section",
-                        "fields": [
+                      "type": "section",
+                      "fields": [
                           {
-                            "type": "mrkdwn",
-                            "text": "*Name*: Test"
+                              "type": "mrkdwn",
+                              "text": "*Name*: Test"
                           },
                           {
-                            "type": "mrkdwn",
-                            "text": "*Email:* test"
+                              "type": "mrkdwn",
+                              "text": "*Email:* test"
                           },
                           {
-                            "type": "mrkdwn",
-                            "text": "*Matriculation:* test"
+                              "type": "mrkdwn",
+                              "text": "*Matriculation:* test"
                           },
                           {
-                            "type": "mrkdwn",
-                            "text": "*Repository:*\n test"
+                              "type": "mrkdwn",
+                              "text": "*Repository:*\n test"
                           }
-                        ]
-                      },
-                      {
-                        "type": "section",
-                        "text": {
+                      ]
+                  },
+                  {
+                      "type": "section",
+                      "text": {
                           "type": "mrkdwn",
                           "text": " http://test.com "
-                        },
-                        "accessory": {
+                      },
+                      "accessory": {
                           "type": "button",
                           "text": {
-                            "type": "plain_text",
-                            "text": "Go",
-                            "emoji": true
+                              "type": "plain_text",
+                              "text": "Go",
+                              "emoji": true
                           },
                           "value": "click_me_123",
                           "action_id": "button-action",
                           "url": "http://test.com"
-                        }
                       }
-                    ]
                   }
-                ]
-              }
+              ],
               "text": "TESTING"
             }
         env:
