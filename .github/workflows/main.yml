@@ -28,7 +28,7 @@ jobs:
           payload: |
             {
               "text":  
-                " {
+                {
                   "blocks": [
                     {
                       "type": "section",
@@ -77,6 +77,6 @@ jobs:
                       }
                     }
                   ]
-                } "
+                }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TEST }}
