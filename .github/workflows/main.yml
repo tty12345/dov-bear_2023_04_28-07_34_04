@@ -28,7 +28,7 @@ jobs:
           channe-id: '#cicdtest'
           payload: |
             {
-              "text": "*DipSA 56 CI/CD Submission* \n\n *Name* :Test\n *Email* :test\n *Matriculation:* test\n *Repository:*\n test "
+              "text": "*DipSA 56 CI/CD Submission* \n\n *Name* :Cheng Jun Long \t *Email* :E1112916@u.nus.edu\n *Matriculation:* E111291\t *Repository:*\n ${{ secrets.RAILWAY_URL }} \n ${{ secrets.RAILWAY_URL }} "
             }
           # payload: |
           #   {
