@@ -27,57 +27,56 @@ jobs:
           # This data can be any valid JSON from a previous step in the GitHub Action
           payload: |
             {
-              "text": "testing", 
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*DipSA 56 CI/CD Submission*"
-                  }
-                },
-                {
-                  "type": "section",
-                  "fields": [
+              "text":  
+                " {
+                  "blocks": [
                     {
-                      "type": "mrkdwn",
-                      "text": "*Name*: Test"
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": "*DipSA 56 CI/CD Submission*"
+                      }
                     },
                     {
-                      "type": "mrkdwn",
-                      "text": "*Email:* E1112916@u.nus.edu"
+                      "type": "section",
+                      "fields": [
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Name*: Test"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Email:* E1112916@u.nus.edu"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Matriculation:* E111291"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Repository:*\n ${{ secrets.REPO_URL }}"
+                        }
+                      ]
                     },
                     {
-                      "type": "mrkdwn",
-                      "text": "*Matriculation:* E111291"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Repository:*\n www.google.com"
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": " ${{ secrets.RAILWAY_URL }}"
+                      },
+                      "accessory": {
+                        "type": "button",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Go",
+                          "emoji": true
+                        },
+                        "value": "click_me_123",
+                        "action_id": "button-action",
+                        "url": "${{ secrets.RAILWAY_URL }}"
+                      }
                     }
                   ]
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "www.google.com "
-                  },
-                  "accessory": {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "Go",
-                      "emoji": true
-                    },
-                    "value": "click_me_123",
-                    "action_id": "button-action",
-                    "url": " www.google.com "
-                  }
-                }
-              ]
-            }
+                } "
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TEST }}
-          # RAILWAY_URL: ${{ secrets.RAILWAY_URL }}
-          # REPO_URL: ${{ secrets.REPO_URL }}
