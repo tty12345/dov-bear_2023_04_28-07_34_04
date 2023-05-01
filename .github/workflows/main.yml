@@ -73,8 +73,8 @@ jobs:
                           "url": "http://test.com"
                       }
                   }
-              ]
-              "text": "TESTING",
+              ],
+              "text": "TESTING"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TESTTEST }}
