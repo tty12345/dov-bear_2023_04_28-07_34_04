@@ -53,7 +53,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Repository:*\n ${{ REPO_URL }}"
+                      "text": "*Repository:*\n www.google.com"
                     }
                   ]
                 },
@@ -61,7 +61,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "${{ RAILWAY_URL }}"
+                    "text": "www.google.com "
                   },
                   "accessory": {
                     "type": "button",
@@ -72,12 +72,12 @@ jobs:
                     },
                     "value": "click_me_123",
                     "action_id": "button-action",
-                    "url": " ${{ RAILWAY_URL }} "
+                    "url": " www.google.com "
                   }
                 }
               ]
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TEST }}
-          RAILWAY_URL: ${{ secrets.RAILWAY_URL }}
-          REPO_URL: ${{ secrets.REPO_URL }}
+          # RAILWAY_URL: ${{ secrets.RAILWAY_URL }}
+          # REPO_URL: ${{ secrets.REPO_URL }}
