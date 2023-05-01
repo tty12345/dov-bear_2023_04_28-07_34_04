@@ -32,7 +32,6 @@ jobs:
           #   }
           payload: |
             {
-              "text": "TESTING",
               {
                 "blocks": [
                   {
