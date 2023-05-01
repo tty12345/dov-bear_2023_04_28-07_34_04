@@ -34,7 +34,7 @@ jobs:
             {
               "token": "xoxc-296954769399-3973940170400-4077806723602-370f29c13230cce1f8f168102cb6e43c1ed1f1d4b77d2d3f456a16189e542efa",
               "channel": "C055K9WDT0D",
-              attachments: [
+              "attachments": [
                 {
                   "color": "#f2c744",
                   "blocks": [
