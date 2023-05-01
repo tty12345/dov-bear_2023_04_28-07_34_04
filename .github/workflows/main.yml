@@ -27,14 +27,14 @@ jobs:
           payload: |
             {
               "blocks": [
-                {
-                  "text": {
-                    "text": "Its the list of your blocks",
-                    "type": "mrkdwn"
-                },
-                "type": "section",
-                },
-              ],
+                  {
+                      "text": {
+                          "text": "Its the list of your blocks",
+                          "type": "mrkdwn"
+                      },
+                      "type": "section"
+                  }
+              ]
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TESTTEST }}
