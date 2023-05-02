@@ -32,47 +32,46 @@ jobs:
           #   }
           payload: |
             {
-              {
-                "channel": "C055K9WDT0D",
-                "text": "New Paid Time Off request from Fred Enriquez",
-                "blocks": [
-                  {
-                    "type": "header",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "New request"
-                    }
-                  },
-                  {
-                    "type": "section",
-                    "fields": [
-                      {
-                        "type": "mrkdwn",
-                        "text": "*Type:*\nPaid Time Off"
-                      },
-                      {
-                        "type": "mrkdwn",
-                        "text": "*Created by:*\n<example.com|Fred Enriquez>"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "section",
-                    "fields": [
-                      {
-                        "type": "mrkdwn",
-                        "text": "*When:*\nAug 10 - Aug 13"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "section",
-                    "text": {
-                      "type": "mrkdwn",
-                      "text": "<https://example.com|View request>"
-                    }
+              "channel": "C055K9WDT0D",
+              "text": "New Paid Time Off request from Fred Enriquez",
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "New request"
                   }
-                ]
-              }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Type:*\nPaid Time Off"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Created by:*\n<example.com|Fred Enriquez>"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*When:*\nAug 10 - Aug 13"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<https://example.com|View request>"
+                  }
+                }
+              ]
+            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TESTTEST }}
