@@ -34,10 +34,7 @@ jobs:
             {
               "channel": "C055K9WDT0D",
               "text": "test",
-              "attachments": [
-                {
-                  "color": "#f2c744",
-                  "blocks": [
+              "blocks": [
                     {
                       "type": "header",
                       "text": {
@@ -62,7 +59,7 @@ jobs:
                         },
                         {
                           "type": "mrkdwn",
-                          "text": "*Repository:*\n test"
+                          "text": "*Repository:*\n ${{ secrets.REPO_URL }}"
                         }
                       ]
                     },
@@ -70,7 +67,7 @@ jobs:
                       "type": "section",
                       "text": {
                         "type": "mrkdwn",
-                        "text": " http://test.com "
+                        "text": " ${{ secrets.RAILWAY_URL }} "
                       },
                       "accessory": {
                         "type": "button",
@@ -81,13 +78,11 @@ jobs:
                         },
                         "value": "click_me_123",
                         "action_id": "button-action",
-                        "url": "http://test.com"
+                        "url": "${{ secrets.RAILWAY_URL }}"
                       }
                     }
                   ]
                 }
-              ]
-            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TESTTEST }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
