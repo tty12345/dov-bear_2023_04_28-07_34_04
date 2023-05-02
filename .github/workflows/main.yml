@@ -21,9 +21,11 @@ jobs:
       #   env:
       #     RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       
-      - name: slack-send
+      - name: Send custom JSON data to Slack workflow
         uses: slackapi/slack-github-action@v1.23.0
+        id: cicidtest
         with:
+          channe-id: '#cicdtest'
           # payload: |
           #   {
           #     "text": "*DipSA 56 CI/CD Submission* \n\n *Name* :Cheng Jun Long \t *Email* :E1112916@u.nus.edu\n *Matriculation:* E111291\t *Repository:*\n ${{ secrets.RAILWAY_URL }} \n ${{ secrets.RAILWAY_URL }} "
@@ -31,43 +33,58 @@ jobs:
           payload: |
             {
               "channel": "C055K9WDT0D",
-              "text": "New Paid Time Off request from Fred Enriquez",
-              "blocks": [
+              "text": "test",
+              "attachments": [
                 {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "New request"
-                  }
-                },
-                {
-                  "type": "section",
-                  "fields": [
+                  "color": "#f2c744",
+                  "blocks": [
                     {
-                      "type": "mrkdwn",
-                      "text": "*Type:*\nPaid Time Off"
+                      "type": "header",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "*DipSA 56 CI/CD Submission*"
+                      }
                     },
                     {
-                      "type": "mrkdwn",
-                      "text": "*Created by:*\n<example.com|Fred Enriquez>"
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "fields": [
+                      "type": "section",
+                      "fields": [
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Name*: Test"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Email:* test"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Matriculation:* test"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Repository:*\n test"
+                        }
+                      ]
+                    },
                     {
-                      "type": "mrkdwn",
-                      "text": "*When:*\nAug 10 - Aug 13"
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": " http://test.com "
+                      },
+                      "accessory": {
+                        "type": "button",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Go",
+                          "emoji": true
+                        },
+                        "value": "click_me_123",
+                        "action_id": "button-action",
+                        "url": "http://test.com"
+                      }
                     }
                   ]
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "<https://example.com|View request>"
-                  }
                 }
               ]
             }
