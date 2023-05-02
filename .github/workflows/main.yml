@@ -30,7 +30,7 @@ jobs:
           #   }
           payload: |
             {
-              "channel": "C123ABC456",
+              "channel": "C055K9WDT0D",
               "text": "New Paid Time Off request from Fred Enriquez",
               "blocks": [
                 {
