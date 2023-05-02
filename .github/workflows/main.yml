@@ -21,18 +21,16 @@ jobs:
       #   env:
       #     RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       
-      - name: Send custom JSON data to Slack workflow
+      - name: slack-send
         uses: slackapi/slack-github-action@v1.23.0
-        id: cicidtest
         with:
-          channe-id: '#cicdtest'
           # payload: |
           #   {
           #     "text": "*DipSA 56 CI/CD Submission* \n\n *Name* :Cheng Jun Long \t *Email* :E1112916@u.nus.edu\n *Matriculation:* E111291\t *Repository:*\n ${{ secrets.RAILWAY_URL }} \n ${{ secrets.RAILWAY_URL }} "
           #   }
           payload: |
             {
-              "channel": "C055K9WDT0D",
+              "channel": "C123ABC456",
               "text": "New Paid Time Off request from Fred Enriquez",
               "blocks": [
                 {
@@ -75,3 +73,4 @@ jobs:
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TESTTEST }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
