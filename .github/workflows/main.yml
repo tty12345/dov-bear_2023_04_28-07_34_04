@@ -3,12 +3,11 @@ on:
   push:
     branches:
       - 'release/*'
-      - '!master'
-    tags: ['v[0-9]+.[0-9]+.[0-9]+$']
+    tags: ['v[0-9]+.[0-9]+$']
 jobs: 
   deploy:
     runs-on: ubuntu-latest
-
+    if: "!contains(github.event.head_commit.message, '#NORUN')"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -20,3 +19,64 @@ jobs:
         run: railway up
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      
+      - name: Send custom JSON data to Slack workflow
+        uses: slackapi/slack-github-action@v1.23.0
+        id: cicidtest
+        with:
+          payload: |
+            {
+              "channel": "C055K9WDT0D",
+              "text": "test",
+              "blocks": [
+                    {
+                      "type": "header",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "*DipSA 56 CI/CD Submission*"
+                      }
+                    },
+                    {
+                      "type": "section",
+                      "fields": [
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Name*: Cheng Jun Long"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Email:* e1112916@u.nus.edu"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Matriculation:* A0269533W"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Repository:*\n ${{ secrets.REPO_URL }}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": " ${{ secrets.RAILWAY_URL }} "
+                      },
+                      "accessory": {
+                        "type": "button",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "Go",
+                          "emoji": true
+                        },
+                        "value": "click_me_123",
+                        "action_id": "button-action",
+                        "url": "${{ secrets.RAILWAY_URL }}"
+                      }
+                    }
+                  ]
+                }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_SUBMISSION }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
