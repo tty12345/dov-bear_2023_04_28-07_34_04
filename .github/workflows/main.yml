@@ -27,7 +27,7 @@ jobs:
         with:
           payload: |
             {
-              "channel": "C055K9WDT0D",
+              "channel": "C055UNS0600",
               "text": "test",
               "blocks": [
                     {
@@ -42,15 +42,15 @@ jobs:
                       "fields": [
                         {
                           "type": "mrkdwn",
-                          "text": "*Name*: Test"
+                          "text": "*Name*: Cheng Jun Long"
                         },
                         {
                           "type": "mrkdwn",
-                          "text": "*Email:* test"
+                          "text": "*Email:* e1112916@u.nus.edu"
                         },
                         {
                           "type": "mrkdwn",
-                          "text": "*Matriculation:* test"
+                          "text": "*Matriculation:* A0269533W"
                         },
                         {
                           "type": "mrkdwn",
@@ -79,5 +79,5 @@ jobs:
                   ]
                 }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TESTTEST }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_SUBMISSION }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
