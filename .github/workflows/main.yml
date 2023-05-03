@@ -27,7 +27,7 @@ jobs:
         with:
           payload: |
             {
-              "channel": "C055K9WDT0D",
+              "channel": "C055UNS0600",
               "text": "test",
               "blocks": [
                     {
@@ -79,5 +79,5 @@ jobs:
                   ]
                 }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TESTTEST }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TEST }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
