@@ -42,15 +42,15 @@ jobs:
                       "fields": [
                         {
                           "type": "mrkdwn",
-                          "text": "*Name*: Test"
+                          "text": "*Name*: Cheng Jun Long"
                         },
                         {
                           "type": "mrkdwn",
-                          "text": "*Email:* test"
+                          "text": "*Email:* E1112916@u.nus.edu"
                         },
                         {
                           "type": "mrkdwn",
-                          "text": "*Matriculation:* test"
+                          "text": "*Matriculation:* A0269533W"
                         },
                         {
                           "type": "mrkdwn",
